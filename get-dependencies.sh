@@ -28,7 +28,7 @@ echo "$VERSION" > ~/version
 
 mkdir -p ./AppDir/bin
 cd ./lba2-community
-patch -Np1 -i ../rename-symbol.patch
+#patch -Np1 -i ../rename-symbol.patch
 mkdir -p build && cd build
 cmake .. \
       -DSOUND_BACKEND=sdl \
