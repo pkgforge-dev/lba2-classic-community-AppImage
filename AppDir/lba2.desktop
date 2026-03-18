@@ -4,5 +4,5 @@ Name=LBA2 Classic Community
 Comment="A community fork for evolving and modernizing the soruce port"
 Exec=lba2
 Icon=lba2
-StartupWMClass=
+StartupWMClass=lba2
 Categories=Game;Adventure;Platform;
