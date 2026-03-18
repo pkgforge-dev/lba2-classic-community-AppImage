@@ -34,4 +34,4 @@ cmake .. \
       -DMVIDEO_BACKEND=smacker \
       -DCONSOLE_MODULE=ON
 make -j$(nproc)
-mv -v SOURCES/lba2 ../AppDir/bin
+mv -v SOURCES/lba2 ../../AppDir/bin
