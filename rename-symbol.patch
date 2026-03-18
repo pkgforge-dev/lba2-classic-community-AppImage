@@ -1,0 +1,65 @@
+diff --git a/LIB386/H/SYSTEM/WINDOW.H b/LIB386/H/SYSTEM/WINDOW.H
+index c661edc..bf8dc19 100644
+--- a/LIB386/H/SYSTEM/WINDOW.H
++++ b/LIB386/H/SYSTEM/WINDOW.H
+@@ -11,7 +11,7 @@ extern "C" {
+ extern bool AppActive; ///< Application running and in focus status
+ 
+ // --- Initialization ----------------------------------------------------------
+-bool InitWindow(const char *title);
++bool _InitWindow(const char *title);
+ void EndWindow();
+ bool IsWindowInitialized();
+ 
+diff --git a/LIB386/H/SYSTEM/WINSYS.H b/LIB386/H/SYSTEM/WINSYS.H
+index 56894b6..f8e79d9 100644
+--- a/LIB386/H/SYSTEM/WINSYS.H
++++ b/LIB386/H/SYSTEM/WINSYS.H
+@@ -26,7 +26,7 @@ extern	VOID_FUNC	*ManageProc	;
+ extern	WINDOW_PROC	*WindowProc	;
+ 
+ //──────────────────────────────────────────────────────────────────────────
+-void	InitWindow( HINSTANCE hinstance, int nCmdShow, const char *title )	;
++void	_InitWindow( HINSTANCE hinstance, int nCmdShow, const char *title )	;
+ 
+ //──────────────────────────────────────────────────────────────────────────
+ void	ManageEvents()	;
+diff --git a/LIB386/SYSTEM/WINDOW.CPP b/LIB386/SYSTEM/WINDOW.CPP
+index 85df913..1ff57eb 100644
+--- a/LIB386/SYSTEM/WINDOW.CPP
++++ b/LIB386/SYSTEM/WINDOW.CPP
+@@ -75,7 +75,7 @@ static void PresentCurrentTexture() {
+ }
+ 
+ // --- Initialization ----------------------------------------------------------
+-bool InitWindow(const char *title) {
++bool _InitWindow(const char *title) {
+   assert(title != NULL);
+   assert(windowSystemInitialized == false);
+ 
+diff --git a/LIB386/SYSTEM/WINSYS.CPP b/LIB386/SYSTEM/WINSYS.CPP
+index a9581ff..0dc0fe4 100644
+--- a/LIB386/SYSTEM/WINSYS.CPP
++++ b/LIB386/SYSTEM/WINSYS.CPP
+@@ -51,7 +51,7 @@ static void TerminateWindow()
+ }
+ 
+ //----------------------------------------------------------------------------
+-void	InitWindow( HINSTANCE hinstance, int nCmdShow, const char *title)
++void	_InitWindow( HINSTANCE hinstance, int nCmdShow, const char *title)
+ {
+    	WNDCLASSEX	wc		;
+ 	char		semname[_MAX_PATH];
+diff --git a/SOURCES/INITADEL.C b/SOURCES/INITADEL.C
+index b1e3764..f33735d 100644
+--- a/SOURCES/INITADEL.C
++++ b/SOURCES/INITADEL.C
+@@ -92,7 +92,7 @@ void InitAdeline(S32 argc, char *argv[]) {
+   // --- WINDOW ----------------------------------------------------------------
+   {
+     LogPuts("\nInitialising Window. Please wait...\n");
+-    if (!InitWindow(APPNAME)) {
++    if (!_InitWindow(APPNAME)) {
+       exit(1); // TODO: Implement graceful exit
+     }
+   }
