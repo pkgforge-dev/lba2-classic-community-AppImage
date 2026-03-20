@@ -29,9 +29,6 @@ echo "$VERSION" > ~/version
 mkdir -p ./AppDir/bin
 cd ./lba2-community
 mkdir -p build && cd build
-cmake .. \
-      -DSOUND_BACKEND=sdl \
-      -DMVIDEO_BACKEND=smacker \
-      -DCONSOLE_MODULE=ON
+cmake .. -DCONSOLE_MODULE=ON
 make -j$(nproc)
 mv -v SOURCES/lba2 ../../AppDir/bin
