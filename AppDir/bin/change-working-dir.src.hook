@@ -1,5 +1,5 @@
 #!/bin/sh
-dir=${XDG_DATA_HOME:-~/.local/share}/Twinsen
+dir=$DATADIR/Twinsen
 mkdir -p "$dir"
 if [ ! -f "$dir"/LBA2/lba2.cfg ]; then
 mkdir -p "$dir"/LBA2 && cd "$dir"/LBA2
