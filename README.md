@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/lba2-classic-community-AppImage)](https://github.com/pkgforge-dev/lba2-classic-community-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://github.com/pkgforge-dev/lba2-classic-community-AppImage/blob/main/AppDir/lba2.png" width="128" />
+  <img src="https://github.com/pkgforge-dev.png" width="128" />
 </p>
 
 
